@@ -1,19 +1,46 @@
-import { PolymerElement, html } from '/node_modules/@polymer/polymer/polymer-element.js';
+import "/components/classics/navbar/Navbar.js";
+import "/components/classics/navbar/NavbarSubmenuPostList.js";
 
-import "/components/polymer/pages/test/Test.js";
-import "/components/polymer/pages/test2/Test2.js";
+import "/components/classics/pages/test/Test.js";
+import "/components/classics/pages/test2/Test2.js";
 
-import "/components/polymer/router/route/RouteContainer.js";
-import "/components/polymer/router/route/Route.js";
-import "/components/polymer/router/route-link/RouteLink.js";
+import "/components/classics/router/route/RouteContainer.js";
+import "/components/classics/router/route/Route.js";
+import "/components/classics/router/route-link/RouteLink.js";
 
-export default class App extends PolymerElement {
-    static get tag() {
+class App extends HTMLElement {
+    static get is() {
         return 'my-app';
     }
 
-    static get template() {
-        return html`<style> @import "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"; </style>
+    get customStyle() {
+        return `<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"/>`;
+    }
+
+    get template() {
+        return `<nav-bar logo="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" logo_link="/"
+         items='[
+            {"item": "Solution", "sub_items": [
+                { "name": "Analytics", "icon": "/images/analysis.svg", "description": "Get a better understanding of where your traffic is coming from." },
+                { "name": "Engagement", "icon": "/images/engagement.svg", "description": "Speak directly to your customers in a more meaningful way." },
+                { "name": "Security", "icon": "/images/security.svg", "description": "Your customers data will be safe and secure." },
+                { "name": "Integrations", "icon": "/images/integration.svg", "description": "Connect with third-party tools that you’re already using." },
+                { "name": "Automations", "icon": "/images/automations.svg", "description": "Build strategic funnels that will drive your customers to convert." },
+                { "items_footer": [
+                    { "name": "Watch Demo", "icon": "/images/watch.svg" },
+                    { "name": "Contact Sales", "icon": "/images/phone.svg" }
+                ] }
+            ]},
+            {"item": "Pricing", "href": "/pricing"},
+            {"item": "Docs", "href": "/docs"},
+            {"item": "More", "sub_items": [
+                { "name": "Help Center", "icon": "/images/help.svg", "description": "Get all of your questions answered in our forums or contact support." },
+                { "name": "Guides", "icon": "/images/guide.svg", "description": "Learn how to maximize our platform to get the most out of it." },
+                { "name": "Events", "icon": "/images/events.svg", "description": "See what meet-ups and other events we might be planning near you." },
+                { "name": "Security", "icon": "/images/security.svg", "description": "Understand how we take your privacy seriously." },
+                { "component": "nav-bar-submenu-post-list" }
+            ]}
+         ]'></nav-bar>
 
 <route-container app-container="#app">
     <route-def path="/" component="my-test"></route-def>
@@ -28,9 +55,12 @@ export default class App extends PolymerElement {
 
 <div id="app" class="p-3"></div>`;
     }
+
+    connectedCallback() {
+        this.innerHTML = `${this.customStyle} ${this.template}`;
+    }
 }
 
-customElements.define(App.tag, App);
+customElements.define(App.is, App);
 
-document.body.innerHTML = `<${App.tag}></${App.tag}>`;
-
+document.body.innerHTML = `<${App.is}></${App.is}>`;
