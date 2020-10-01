@@ -17,3 +17,5 @@
    - [Article détaillé sur la création de Webcomponents Natifs](https://css-tricks.com/creating-a-custom-element-from-scratch/)
    - [Tutoriel](https://www.robinwieruch.de/web-components-tutorial)
    
+ - [Création d'un routeur JavaScript](https://dev.to/kodnificent/how-to-build-a-router-with-vanilla-javascript-2a18)
+   
