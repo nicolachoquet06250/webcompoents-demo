@@ -1,0 +1,16 @@
+{
+  "name": "tailwingcss-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/polymer": "^3.4.1",
+    "@webcomponents/webcomponentsjs": "^2.4.4"
+  }
+}
