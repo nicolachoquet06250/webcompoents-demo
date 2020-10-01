@@ -1,6 +1,6 @@
 # webcompoents-demo
 
-[Démo ici](https://nicolachoquet06250.github.io/webcomponents-demo/)
+[Démo ici](http://webcomponents-demo.nicolaschoquet.fr/)
 
 ## Annexes
 
